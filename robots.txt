@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://steveroy333.github.io/arkansas-compute-campuses/sitemap.xml
+Sitemap: https://campuses.greyswancapital.ai/sitemap.xml

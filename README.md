@@ -2,7 +2,9 @@
 
 Standalone public section for compute campus coverage in Arkansas.
 
-Live (temporary): https://steveroy333.github.io/arkansas-compute-campuses/
+Live: https://campuses.greyswancapital.ai/
+
+Temporary github.io URL still redirects once custom domain is active: https://steveroy333.github.io/arkansas-compute-campuses/
 
 Future custom domain: campuses.greyswancapital.ai (see CUSTOM-DOMAIN.md)
 
