@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://steveroy333.github.io/arkansas-compute-campuses/sitemap.xml

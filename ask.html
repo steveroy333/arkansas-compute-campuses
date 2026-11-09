@@ -1,0 +1,61 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Compute Campus Hotline — Grey Swan Capital</title><link rel="stylesheet" href="styles.css"><!-- Google Analytics GA4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-85FDB7SKMG"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-85FDB7SKMG');</script>
+</head><body>
+<header class="site-head"><div class="wrap"><a class="brand" href="https://www.greyswancapital.ai" title="Grey Swan Capital main site"><span class="mark"></span>Grey Swan Capital</a><a class="main-site-link" href="https://www.greyswancapital.ai">← Main site</a>
+<nav class="nav"><a href="index.html" class="">The Hub</a><a href="clarksville.html" class="">Clarksville</a><a href="answers.html" class="">Public Answers</a><a href="https://www.greyswancapital.ai/explainers" class="">Explainers</a><a href="https://www.greyswancapital.ai/membership" class="">Memberships</a><a class="btn btn-gold btn-sm" href="ask.html">Compute Campus Hotline</a></nav></div></header><section class="hero" style="padding:0"><div class="wrap" style="grid-template-columns:1fr;padding-top:60px;padding-bottom:56px">
+<div><div class="crumbs"><a href="index.html">Arkansas Compute Campuses</a> › Hotline</div>
+<div class="eyebrow">Compute Campus Hotline</div><h1 style="font-size:clamp(2.2rem,4.6vw,3.6rem)">Ask a question. <em>Share what you know.</em></h1>
+<p class="lede">Questions or tips about Arkansas compute campuses are welcome from residents, officials, workers, and reporters. You can leave your name and email blank if you want to stay anonymous on the form.</p>
+<p class="lede" style="font-size:1rem"><b style="color:#fff">Be honest about anonymity:</b> choosing anonymous means we will not have your name or email to contact you. It is not a legal shield. Do not send anything you are not allowed to share. We never ask for passwords, payment details, or ID numbers.</p></div></div></section>
+<section><div class="wrap grid2 askgrid" style="align-items:start">
+<form class="form" id="hotline-form" onsubmit="return prepareMailto(event)">
+<div class="field"><label for="q">Your question or report<span class="req">Required</span></label><textarea id="q" name="Question" required placeholder="What would you like to ask, or what public information would you like to share?"></textarea></div>
+<div class="field"><label for="f">Facility<span class="opt">Optional</span></label><select id="f" name="Facility"><option value="">Choose a facility (optional)</option><option>Serverfarm ARK (ARK1–ARK4)</option><option>Google West Memphis / Project Pyramid</option><option>AVAIO Digital Leo</option><option>Sheridan / Clean Cloud Energy</option><option>Google Port of Little Rock / Willowbend Capital</option><option>Conway / Forgelight Ventures LLC</option><option>Z Squared / Paradox Data AI-HPC campus</option><option>NewRays One (bitcoin mine)</option><option>BTC Digital Manila (hosting)</option><option>Project Pulse / DC Devco LLC</option><option>Apollo Project (Stadium Partners, Garrison Data Partners)</option><option>Ritter Data Technology Center</option><option>TierPoint Little Rock</option><option>Bentaus / Chadbourn Infrastructure Partners</option><option>BlockOps Moreland (bitcoin mine)</option><option>BlockOps Russellville (bitcoin mine)</option><option>BlockOps Helena-West Helena</option><option>Artemis Technologies Cave City</option><option>Artemis Technologies Monticello</option><option>Artemis Technologies Newark</option><option>Green Digital / Metahash Global Harrison mine</option><option>Mainstream Technologies</option><option>Second Grant County proposal near Redfield (unnamed)</option><option>Other or unknown</option></select></div>
+<label class="check" for="anon"><input type="checkbox" id="anon" onchange="var o=this.checked,b=document.getElementById('idf');b.classList.toggle('off',o);if(o){document.getElementById('nm').value='';document.getElementById('em').value='';}"><span><b style="color:var(--navy)">I want to stay anonymous</b><br><small style="color:var(--slate-2)">This clears and turns off the name and email fields. Leave them blank for an anonymous tip.</small></span></label>
+<div class="idfields" id="idf">
+<div class="field"><label for="nm">Name<span class="opt">Optional</span></label><input type="text" id="nm" name="Name" autocomplete="name"></div>
+<div class="field"><label for="em">Email<span class="opt">Optional</span></label><input type="email" id="em" name="Email" autocomplete="email"><div class="help">Only if you'd like a private reply.</div></div>
+</div>
+<div class="notice"><b>How this works right now:</b> Submit opens your email app with a message to <b>steve@greyswancapital.ai</b> (subject: Compute Campus Hotline). Nothing is stored on this website. For an anonymous tip, leave name and email blank before sending.</div>
+<div class="notice"><b>Anonymous submissions can't get a private reply.</b> Answers to important questions may be posted publicly on <a href="answers.html">Public Answers</a>.</div>
+<div class="notice"><b>Your privacy.</b> We do not publish names or identifying details without permission. Anonymous mode clears the name and email fields on this form. That helps you stay unnamed to us; it is not a promise of legal protection.</div>
+<div class="notice"><b>Please don't send</b> passwords, payment details, ID numbers, or documents you aren't allowed to share. We never ask for them.</div>
+<button class="btn btn-navy" type="submit" style="margin-top:6px">Open email to Grey Swan</button>
+<div id="ok" style="display:none;margin-top:14px" class="notice"><b>Thank you.</b> If your email app opened, send the message to complete your tip. If it did not, email steve@greyswancapital.ai with subject “Compute Campus Hotline”.</div>
+</form>
+<script>
+function prepareMailto(e){
+  e.preventDefault();
+  var q=document.getElementById('q').value.trim();
+  if(!q){return false;}
+  var f=document.getElementById('f').value||'(none)';
+  var nm=document.getElementById('nm').value.trim();
+  var em=document.getElementById('em').value.trim();
+  var anon=document.getElementById('anon').checked;
+  var body='Facility: '+f+'
+
+Question / report:
+'+q+'
+
+';
+  if(anon||(!nm&&!em)){body+='(Anonymous submission — name/email left blank)
+';}
+  else{body+='Name: '+(nm||'(blank)')+'
+Email: '+(em||'(blank)')+'
+';}
+  window.location.href='mailto:steve@greyswancapital.ai?subject='+encodeURIComponent('Compute Campus Hotline')+'&body='+encodeURIComponent(body);
+  document.getElementById('ok').style.display='block';
+  return false;
+}
+</script>
+<div>
+<div class="card" style="margin-bottom:18px"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12a8 8 0 01-11.5 7.2L3 21l1.8-6.5A8 8 0 1121 12z"/></svg></div><h3>What happens next</h3><ol style="padding-left:18px;color:var(--slate-2);margin:0">
+<li>We read every submission.</li><li>We check tips and claims against public records before anything is published.</li><li>We do not publish accusations without a documented public record.</li><li>Important questions get a plain-English answer on <a href="answers.html">Public Answers</a>, with sources, so everyone can read them.</li><li>Anonymous submissions cannot get a private reply.</li></ol></div>
+<div class="card" style="margin-bottom:18px"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 5h13v14H6a2 2 0 01-2-2z"/><path d="M17 9h3v8a2 2 0 01-2 2M8 9h5M8 13h5"/></svg></div><h3>Reporters and news outlets</h3><p style="color:var(--slate-2);margin:0">Use this form for media questions, or contact us through <a href="https://www.greyswancapital.ai/contact">greyswancapital.ai/contact</a>. Include your outlet if you want a reply. You're welcome to cite facility pages and the players report; please link the page and the date updated.</p></div>
+<div class="card"><h3>Please don't send</h3><p style="color:var(--slate-2);margin:0">Passwords, payment details, ID numbers, or documents you aren't allowed to share. We never ask for them.</p></div>
+</div></div></section><footer><div class="wrap"><img src="assets/gsc-logo.jpg" alt="Grey Swan Capital logo">
+<div><b style="color:#fff;font-family:var(--heading);font-size:1.1rem">Arkansas Compute Campuses</b><br>A Grey Swan Capital public-interest resource, by Steve Schroeder of Conway, Arkansas.
+<div class="fine">Civic analysis from public sources, not legal, engineering, or investment advice. Public sources through November 9, 2026 (Central Time). No wrongdoing by any named person or company is alleged. Map graphics are illustrative.</div></div>
+<div style="display:flex;flex-direction:column;gap:6px"><a href="https://www.greyswancapital.ai">greyswancapital.ai</a><a href="https://greyswancapital.substack.com">Substack series</a><a href="ask.html">Compute Campus Hotline</a><a href="answers.html">Public Answers</a></div></div></footer></body></html>
